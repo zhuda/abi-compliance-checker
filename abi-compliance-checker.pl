@@ -104,7 +104,11 @@ Example: $CmdName -l NAME -old ABI-0.dump -new ABI-1.dump
 ABI-0.dump and ABI-1.dump are ABI dumps generated
 by the ABI Dumper or ABICC tools.
 
+Add some test codes.
 More info: $CmdName --help\n";
+
+
+
 
 if($#ARGV==-1)
 {
@@ -195,6 +199,7 @@ GetOptions(
   "skip-added-constants!" => \$In::Opt{"SkipAddedConstants"},
   "skip-removed-constants!" => \$In::Opt{"SkipRemovedConstants"},
 # Other
+# add some comments
   "lang=s" => \$In::Opt{"UserLang"},
   "arch=s" => \$In::Opt{"TargetArch"},
   "mingw-compatible!" => \$In::Opt{"MinGWCompat"},
@@ -514,6 +519,7 @@ REPORT FORMAT OPTIONS:
   -show-retval
       Show the symbol's return type in the report.
 
+  -useless option
   -stdout
       Print analysis results (compatibility reports and ABI dumps) to stdout
       instead of creating a file. This would allow piping data to other programs.
@@ -851,6 +857,7 @@ my %AddSymbolParams;
 my %GlobalDataObject;
 
 # Merging
+# comments
 my %CompSign;
 my %AddedInt;
 my %RemovedInt;
